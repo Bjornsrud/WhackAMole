@@ -2,7 +2,6 @@ package net.ckb78.whackamole;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Objects;
 import java.util.Random;
 
 public class WhackAMole {
