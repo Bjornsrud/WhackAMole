@@ -2,6 +2,7 @@ package net.ckb78.whackamole;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 import java.util.Random;
 
 public class WhackAMole {
@@ -77,19 +78,16 @@ public class WhackAMole {
         linePanelBottom.setBackground(Color.ORANGE);
         linePanelBottom.setPreferredSize(new Dimension(boardWidth - 120, 3));
 
-        // Container to hold the text and lines
         JPanel textContainer = new JPanel();
         textContainer.setLayout(new BorderLayout());
         textContainer.setBackground(Color.BLACK);
         textContainer.add(textLabel, BorderLayout.NORTH);
         textContainer.add(scoreLabel, BorderLayout.CENTER);
 
-        // Place everything in the textPanel
         textPanel.add(linePanelTop);
         textPanel.add(textContainer);
         textPanel.add(linePanelBottom);
 
-        // Panel to hold the new game button
         buttonPanel.setBackground(Color.BLACK);
         buttonPanel.setLayout(new BorderLayout());
         buttonPanel.setPreferredSize(new Dimension(120, 150));
@@ -139,13 +137,13 @@ public class WhackAMole {
     }
 
     private void loadIcons() {
-        Image moleImage = new ImageIcon(getClass().getResource("./Mole.png")).getImage();
+        Image moleImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("./Mole.png"))).getImage();
         moleIcon = new ImageIcon(moleImage.getScaledInstance(160, 160, java.awt.Image.SCALE_SMOOTH));
 
-        Image bombImage = new ImageIcon(getClass().getResource("./Bomb.png")).getImage();
+        Image bombImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("./Bomb.png"))).getImage();
         bombIcon = new ImageIcon(bombImage.getScaledInstance(170, 170, java.awt.Image.SCALE_SMOOTH));
 
-        Image explosionImage = new ImageIcon(getClass().getResource("./Explosion.png")).getImage();
+        Image explosionImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("./Explosion.png"))).getImage();
         explosionIcon = new ImageIcon(explosionImage.getScaledInstance(160, 160, java.awt.Image.SCALE_SMOOTH));
     }
 
@@ -212,6 +210,7 @@ public class WhackAMole {
         }
 
         JButton newGameButton = getNewGameButton();
+        assert newGameButton != null;
         newGameButton.setText("<html><CENTER>NEW<br>GAME</CENTER></html>");
         newGameButton.setBackground(Color.DARK_GRAY);
     }
