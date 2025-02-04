@@ -136,15 +136,18 @@ public class WhackAMole {
     }
 
     private void loadIcons() {
-        Image moleImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("./Mole.png"))).getImage();
+        String resourcePath = "resources/";
+
+        Image moleImage = new ImageIcon(resourcePath + "Mole.png").getImage();
         moleIcon = new ImageIcon(moleImage.getScaledInstance(160, 160, java.awt.Image.SCALE_SMOOTH));
 
-        Image bombImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("./Bomb.png"))).getImage();
+        Image bombImage = new ImageIcon(resourcePath + "Bomb.png").getImage();
         bombIcon = new ImageIcon(bombImage.getScaledInstance(170, 170, java.awt.Image.SCALE_SMOOTH));
 
-        Image explosionImage = new ImageIcon(Objects.requireNonNull(getClass().getResource("./Explosion.png"))).getImage();
+        Image explosionImage = new ImageIcon(resourcePath + "Explosion.png").getImage();
         explosionIcon = new ImageIcon(explosionImage.getScaledInstance(160, 160, java.awt.Image.SCALE_SMOOTH));
     }
+
 
     private void initializeTimers() {
         setMoleTimer = new Timer(1000, e -> setMole());
