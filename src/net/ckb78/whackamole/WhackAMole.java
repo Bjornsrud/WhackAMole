@@ -120,7 +120,6 @@ public class WhackAMole {
 
         for (int i = 0; i < 9; i++) {
             JButton tile = new JButton();
-            tile.setFont(new Font("Courier New", Font.PLAIN, 20));
             board[i] = tile;
             boardPanel.add(tile);
             tile.setFocusable(false);
