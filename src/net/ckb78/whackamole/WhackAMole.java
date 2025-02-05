@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class WhackAMole {
     int boardWidth = 590;
-    int boardHeight = 700;
+    int boardHeight = 680;
 
     JFrame frame = new JFrame("Whack-A-Mole");
     JLabel textLabel = new JLabel();
@@ -67,7 +67,7 @@ public class WhackAMole {
 
         textPanel.setLayout(new BoxLayout(textPanel, BoxLayout.Y_AXIS));
         textPanel.setBackground(Color.BLACK);
-        textPanel.setPreferredSize(new Dimension(boardWidth - 120, 150));
+        textPanel.setPreferredSize(new Dimension(boardWidth - 120, 90));
 
         JPanel linePanelTop = new JPanel();
         linePanelTop.setBackground(Color.ORANGE);
@@ -83,13 +83,14 @@ public class WhackAMole {
         textContainer.add(textLabel, BorderLayout.NORTH);
         textContainer.add(scoreLabel, BorderLayout.CENTER);
 
-        textPanel.add(linePanelTop);
+//        textPanel.add(linePanelTop);
         textPanel.add(textContainer);
-        textPanel.add(linePanelBottom);
+//        textPanel.add(linePanelBottom);
+        textPanel.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 4));
 
         buttonPanel.setBackground(Color.BLACK);
         buttonPanel.setLayout(new BorderLayout());
-        buttonPanel.setPreferredSize(new Dimension(120, 150));
+        buttonPanel.setPreferredSize(new Dimension(120, 90));
 
         JButton newGameButton = createNewGameButton();
         buttonPanel.add(newGameButton, BorderLayout.CENTER);
